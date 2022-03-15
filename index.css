@@ -22,6 +22,7 @@ main {
 }
 
 #button {
+    touch-action: manipulation;
     --color: firebrick;
     --border-color: firebrick;
     --shadow-color: rgb(112, 20, 20);
