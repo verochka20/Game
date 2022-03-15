@@ -93,3 +93,4 @@ main {
     height: 45px;  
     color: green;
 }
+*{touch-action: pan-x pan-y} /*only allow scroll gestures*/
