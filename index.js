@@ -19,10 +19,31 @@ beginning && (button.onclick = start);
 
 function start() {
     const starTime = Date.now();
+    let lastclicktime =0;
 
     display.textContent =  formatTime(TIMEOUT);
-    button.onclick  = () => counter.textContent = (clicks++) + ' $';
-    //button.onclick  = () => bonus.textContent = '1$'; 
+
+
+    button.onclick  = () => {
+        if (Date.now()-lastclicktime<100){
+            numBonus=5;
+            bonus.textContent = '+5$';
+        }
+        else{
+            lastclicktime=Date.now();
+            numBonus=1;
+            bonus.textContent = '+1$';
+
+        }
+        
+        counter.textContent = (clicks+=(numBonus)) + '$';
+        lastclicktime=Date.now();
+        setTimeout(() => {
+            bonus.textContent = '';
+        }, 500);
+    }
+
+ 
     
 
     const interval = setInterval(() => {

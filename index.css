@@ -85,8 +85,10 @@ main {
 
 #display,
 #counter {
+    color: white;
     height: 32px;
 }
 #bonus{
-    height: 40px;  
+    height: 45px;  
+    color: green;
 }
